@@ -16,7 +16,58 @@
   </head>
   <body>
     <!-- header start -->
-    <header></header>
+    <header class="container mx-auto">
+      <!-- nav -->
+      <nav>
+        <div class="navbar bg-base-100">
+          <div class="navbar-start">
+            <div class="dropdown">
+              <!-- hamburger icon -->
+              <label tabindex="0" class="btn btn-ghost lg:hidden">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h8m-8 6h16"
+                  />
+                </svg>
+              </label>
+              <!-- responsive menu start-->
+              <ul
+                tabindex="0"
+                class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                <a class="btn">Sort By View</a>
+              </ul>
+              <!-- responsive menu end -->
+            </div>
+            <a class="btn btn-ghost normal-case text-xl" href="index.html"
+              ><img src="./image/Logo.png" alt=""
+            /></a>
+          </div>
+
+          <!-- desktop menu start -->
+          <div class="navbar-center hidden lg:flex">
+            <a class="btn">Sort By View</a>
+          </div>
+
+          <!-- desktop menu end -->
+
+          <!-- Blog button start-->
+          <div class="navbar-end">
+            <a class="btn">Blog</a>
+          </div>
+          <!-- blog button end -->
+        </div>
+      </nav>
+    </header>
     <!-- header end -->
     <!-- main start -->
     <main></main>
