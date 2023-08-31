@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PH Tube</title>
 
+    <!-- fontawesome -->
+
+    <script
+      src="https://kit.fontawesome.com/e4fd83d3e1.js"
+      crossorigin="anonymous"
+    ></script>
+
     <!-- daisy ui -->
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css"
@@ -13,10 +20,14 @@
     />
     <!-- Tailwind css -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- style -->
+
+    <link rel="stylesheet" href="./style/style.css" />
   </head>
   <body>
     <!-- header start -->
-    <header class="container mx-auto">
+    <header class="container mx-auto border-b-2">
       <!-- nav -->
       <nav>
         <div class="navbar bg-base-100">
@@ -70,9 +81,22 @@
     </header>
     <!-- header end -->
     <!-- main start -->
-    <main></main>
+    <main class="container mx-auto mt-8" id="main">
+      <div class="tabs flex justify-center gap-5 mb-10" id="category"></div>
+      <div id="empty"></div>
+
+      <!-- card -->
+
+      <section
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        id="card-section"
+      ></section>
+    </main>
     <!-- main end -->
     <!-- footer start -->
     <!-- footer end -->
+
+    <!-- script  -->
+    <script src="./js/index.js"></script>
   </body>
 </html>

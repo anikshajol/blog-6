@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap");
+
+* {
+  font-family: "Inter", sans-serif;
+}
+
+.views,
+.author {
+  color: rgba(23, 23, 23, 0.7);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.profile-picture {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+}
+
+.card-thumbnail {
+  height: 200px;
+}
+
+.fa-check {
+  background-color: blue;
+  color: white;
+  border-radius: 100%;
+  padding: 2px;
+  font-size: 8px;
+}
+
+.empty-data {
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.empty-data p {
+  color: #171717;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  width: 50%;
+}
+
+.btn:active {
+  background-color: red;
+}
