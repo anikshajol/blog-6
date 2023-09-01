@@ -55,7 +55,7 @@
                 tabindex="0"
                 class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
               >
-                <a class="btn" id="">Sort By View</a>
+                <a class="btn" onclick="sortData()">Sort By View</a>
               </ul>
               <!-- responsive menu end -->
             </div>
@@ -66,14 +66,18 @@
 
           <!-- desktop menu start -->
           <div class="navbar-center hidden lg:flex">
-            <a class="btn" id="sort">Sort By View</a>
+            <a class="btn" onclick="sortData()">Sort By View</a>
           </div>
 
           <!-- desktop menu end -->
 
           <!-- Blog button start-->
           <div class="navbar-end">
-            <a class="btn" href="./blog.html">Blog</a>
+            <a
+              class="btn hover:text-black bg-red-600 text-white"
+              href="./blog.html"
+              >Blog</a
+            >
           </div>
           <!-- blog button end -->
         </div>
@@ -97,6 +101,7 @@
     <!-- footer end -->
 
     <!-- script  -->
+    <script src="./js/shared.js"></script>
     <script src="./js/index.js"></script>
   </body>
 </html>

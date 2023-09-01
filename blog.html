@@ -23,7 +23,7 @@
 
     <!-- style -->
 
-    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="stylesheet" href="./style/blog.css" />
   </head>
   <body>
     <!-- header start -->
@@ -46,7 +46,11 @@
 
           <!-- Blog button start-->
           <div class="navbar-end">
-            <a href="./index.html" class="btn">Home</a>
+            <a
+              href="./index.html"
+              class="btn hover:text-black bg-red-600 text-white"
+              >Home</a
+            >
           </div>
           <!-- blog button end -->
         </div>
@@ -57,41 +61,48 @@
     <main class="container mx-auto mt-8">
       <!-- Question -->
 
-      <h3>Q. Discuss the scope of var, let, and const</h3>
-      <p>
-        <span>Var:</span> Var is a global variable. Var can access from
-        anywhere.
-      </p>
-      <p>
-        <span>Let:</span> Let is block scope. if we declare a variable with let
-        in the function, we can also declare with the same variable other side
-        of scope.
-      </p>
-      <p>
-        <span>Const:</span> const is also a block scope. but we can not re
-        assign it.
-      </p>
+      <div>
+        <h3 class="title">Q. Discuss the scope of var, let, and const</h3>
+        <p>
+          <span>Var:</span> Var is a global scope. Var can access from anywhere.
+          var create variables that can be reassigned another value, can declare
+          same variable that will change the value of first variable.
+        </p>
+        <p>
+          <span>Let:</span> Let is block scope. If declared let inside of
+          function that will not hoisting. we can not access that variable from
+          outside. let create variables that can be reassigned another value but
+          Can not declare as a same variable.
+        </p>
+        <p>
+          <span>Const:</span> const is also a block scope. const create variable
+          that can not be reassigned another value.
+        </p>
+      </div>
 
-      <h3>Q. Tell us the use cases of null and undefined</h3>
-      <p>
-        <span>null:</span>When we don't declare any thing and want to access
-        that will return us null
-      </p>
+      <div>
+        <h3 class="title">Q. Tell us the use cases of null and undefined</h3>
+        <p>
+          <span>Null:</span> Null means an empty value. Declare variable as a
+          null means no value.
+        </p>
 
-      <p>
-        <span>undefined:</span>When something declare but not provided value .
-        and try to access that will return undefined
-      </p>
+        <p>
+          <span>Undefined:</span>When variable declare but value not assigned,
+          and try to access that will return undefined
+        </p>
+      </div>
+      <div>
+        <h3 class="title">Q. What do you mean by REST API?</h3>
 
-      <h3>Q. What do you mean by REST API?</h3>
-
-      <p>
-        An API(Application programming Interface) is the way of communication
-        application and devices. A REST API is an API that conforms to the
-        design principles of the REST, or representational state transfer
-        architectural style.For this reason, REST APIs are sometimes referred to
-        RESTful APIs.
-      </p>
+        <p>
+          An API(Application programming Interface) is the way of communication
+          application and devices. A REST API is an API that confirms to the
+          design principles of the REST, or representational state transfer
+          architectural style.For this reason, REST APIs are sometimes referred
+          to RESTful APIs.
+        </p>
+      </div>
     </main>
     <!-- main end -->
 
