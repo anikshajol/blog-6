@@ -44,7 +44,3 @@
   font-weight: 700;
   width: 50%;
 }
-
-#active:is(:active).active {
-  background-color: red;
-}
