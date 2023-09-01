@@ -16,8 +16,6 @@ const loadCategory = async () => {
 
 const showCategoryData = (categoryData) => {
   categoryData.forEach((category) => {
-    // console.log(category.length);
-
     // get category div
 
     const categoryDiv = document.getElementById("category");
@@ -44,6 +42,7 @@ const handleClick = async (id) => {
     const data = await response.json();
 
     const categoryData = data.data;
+
     // show data
     //   get card section
     const cardSection = document.getElementById("card-section");
@@ -68,11 +67,13 @@ const handleClick = async (id) => {
       empty.innerHTML = "";
     }
 
+    // sort(categoryData);
+
     // clear card
     cardSection.innerHTML = "";
 
     categoryData.forEach((element) => {
-      //   console.log(element);
+      // console.log(element);
 
       const { thumbnail, title, authors, others } = element;
 
@@ -81,18 +82,38 @@ const handleClick = async (id) => {
       //   create div
       const div = document.createElement("div");
 
+      function convertHMS(value) {
+        // convert value to number
+        const sec = parseInt(value, 10);
+        // get hours
+        const hours = Math.floor(sec / 3600);
+
+        // get minutes
+        const minutes = Math.floor((sec - hours * 3600) / 60);
+
+        return hours + "hrs" + " " + minutes + " " + "min" + " " + "ago"; // Return is HH : MM : SS
+      }
+
       //   add style into card div
 
       div.classList = "card bg-base-100 shadow-xl";
 
       div.innerHTML = `
       
-      <figure>
+      <figure class="relative">
       <img
         src="${thumbnail}"
         alt="card-image"
         class="card-thumbnail"
       />
+      <div
+      class=" bg-black text-white  absolute -bottom-0 right-10"
+      id="post-time"
+    >
+    <span>${
+      others.posted_date ? convertHMS(others.posted_date) : (innerHTML = " ")
+    }</span>
+    </div>
     </figure>
     <div class="card-body">
       <div class="flex justify-center md:justify-start lg:justify-normal items-center gap-5">
@@ -126,11 +147,32 @@ const handleClick = async (id) => {
       `;
 
       cardSection.appendChild(div);
+
+      sort(categoryData);
+
+      const postTime = document.getElementById("post-time");
+      if (others.posted_date === "") {
+        postTime.classList.add("hidden");
+      }
     });
   } catch (err) {
     console.log(err);
   }
 };
+
+// sort
+
+document
+  .getElementById("sort")
+  .addEventListener("click", function sortHighToLow(id) {
+    fetch(`https://openapi.programming-hero.com/api/videos/category/${id}`)
+      .then((res) => res.json())
+      .then((data) => sort(data.data));
+  });
+
+function sort(data) {
+  data.sort((a, b) => parseFloat(b.others.views) - parseFloat(a.others.views));
+}
 
 handleClick(1000);
 
