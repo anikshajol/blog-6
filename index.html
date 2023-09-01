@@ -34,7 +34,7 @@
           <div class="navbar-start">
             <div class="dropdown">
               <!-- hamburger icon -->
-              <label tabindex="0" class="btn btn-ghost lg:hidden">
+              <label tabindex="0" class="btn btn-ghost md:hidden">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="h-5 w-5"
@@ -59,13 +59,13 @@
               </ul>
               <!-- responsive menu end -->
             </div>
-            <a class="btn btn-ghost normal-case text-xl" href="index.html"
-              ><img src="./image/Logo.png" alt=""
+            <a class="normal-case text-xl" href="index.html"
+              ><img class="w-full" src="./image/Logo.png" alt=""
             /></a>
           </div>
 
           <!-- desktop menu start -->
-          <div class="navbar-center hidden lg:flex">
+          <div class="navbar-center hidden md:flex">
             <a class="btn" onclick="sortData()">Sort By View</a>
           </div>
 
@@ -86,13 +86,16 @@
     <!-- header end -->
     <!-- main start -->
     <main class="container mx-auto mt-8" id="main">
-      <div class="tabs flex justify-center gap-5 mb-10" id="category"></div>
+      <div
+        class="flex justify-center items-center flex-wrap gap-5 mb-10"
+        id="category"
+      ></div>
       <div id="empty"></div>
 
       <!-- card -->
 
       <section
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-5 md:p-0"
         id="card-section"
       ></section>
     </main>
