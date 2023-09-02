@@ -1,3 +1,5 @@
+let dataByCategory = [];
+
 const loadCategory = async () => {
   try {
     const response = await fetch(
@@ -43,6 +45,8 @@ const handleClick = async (id) => {
     const categoryData = data.data;
 
     showContent(categoryData);
+
+    dataByCategory = categoryData;
   } catch (err) {
     console.log(err);
   }
@@ -50,24 +54,17 @@ const handleClick = async (id) => {
 
 // sorting data
 
-const sortData = () => {
-  fetch(`https://openapi.programming-hero.com/api/videos/category/1000`)
-    .then((res) => res.json())
-    .then((data) => showSort(data.data));
-};
-
-const showSort = (categoryData) => {
-  categoryData.sort(
+const showSort = () => {
+  let arr = dataByCategory.sort(
     (a, b) => parseFloat(b.others.views) - parseFloat(a.others.views)
   );
 
   const cardSection = document.getElementById("card-section");
-
+  // console.log(arr);
   cardSection.innerHTML = "";
 
-  showContent(categoryData);
+  showContent(arr);
 };
 
-handleClick(1000);
-
 loadCategory();
+handleClick(1000);

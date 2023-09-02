@@ -25,10 +25,12 @@ function showContent(categoryData) {
 
   //   data loop and show in html
 
+  currentCategory = categoryData;
+
   categoryData.forEach((element) => {
     // destructuring
     const { thumbnail, title, authors, others } = element;
-
+    currentCategory == category.category_id;
     const author = authors[0];
 
     //   create div
